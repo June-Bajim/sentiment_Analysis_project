@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Index</a>
+            <a href="{{ url_for('predict') }}">Prediction</a>
+            <a href="{{ url_for('logout') }}">Log out</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+    </header>
+    <div class="container">
+        <h2>Get in Touch </h2>
+        <form id="contactForm">
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <textarea name="message" id="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sentiment Analysis. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+
+        console.log('Sending data:', data); // Add this line for debugging
+
+        fetch('/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log('Response:', data);
+            alert('Message sent successfully! Will get back to you shortly');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred: ' + error.message);
+        });
+    });
+});
+    </script>
+</body>
+</html>

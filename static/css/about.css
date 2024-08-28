@@ -1,0 +1,125 @@
+/* Resetting default margin and padding */
+body, h1, h2, h3, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling header */
+header {
+    background-color: #2b9552;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust as needed */
+    margin-right: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Styling main content */
+.container {
+    padding: 20px;
+}
+
+#home, #about, #services, #contact {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 0px;
+    color: #2b9552;
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    font-size: 20px;
+}
+.cta button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cta button:hover {
+    background-color: #296e42;
+}
+
+/* Footer styling */
+footer {
+    background-color: #2b9552;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.footer-section {
+    margin-bottom: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.footer-section ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+}

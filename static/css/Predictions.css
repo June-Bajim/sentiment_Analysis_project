@@ -1,0 +1,146 @@
+/* Resetting default margin and padding */
+body, h1, h2, h3, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #2b9552;
+}
+
+.logo img {
+    height: 50px; /* Adjust as needed */
+}
+
+.header-content {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+h1 {
+    font-size: 24px;
+    color: rgb(12, 12, 12);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+header p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Styling main content */
+main {
+    padding: 20px;
+}
+
+/* Style for container */
+.container {
+    max-width: 800px; /* Limit the width of the container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background color for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.center-section {
+    flex: 2;
+}
+
+/* Styling for input section */
+#inputSection, #resultSection {
+    margin-bottom: 20px;
+}
+
+#inputSection h2, #resultSection h2 {
+    margin-bottom: 10px;
+    font-size: 20px; /* Heading size */
+    color: #333; /* Header text color */
+}
+
+/* styling the textarea */
+textarea {
+    width: 100%; /* Full width */
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+/* styling the input URL */
+input[type="url"] {
+    width: 100%; /* Full width */
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Modify the button */
+button[type="button"] {
+    background-color: #2b9552;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* Styling result section */
+#resultSection {
+    background-color: #e7f3fe; /* Light blue background for results */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #b2d4fc; /* Light border for results */
+}
+
+#predictionResult, #recommendation {
+    font-size: 18px; /* Larger font size for results */
+    margin-bottom: 10px; /* Spacing between results */
+}
+
+/* Styling footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2b9552;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 20px;
+    color: #591dc7;
+}

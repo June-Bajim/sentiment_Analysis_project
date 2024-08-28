@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Polarity Prediction Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Predictions.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="header content">
+            <h1>Sentiment Polarity Prediction Service</h1>
+            <p>Providing accurate sentiment predictions based on customer reviews</p>
+        </div>
+        <nav>
+            <a href="{{ url_for('index') }}">Index</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('logout') }}">Log out</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Predict Sentiment Polarity</h2>
+        <form id="reviewForm">
+            <label for="reviewText">Input Customer Reviews (up to 500 reviews, one per line):</label>
+            <textarea id="reviewText" name="reviewText" rows="10" placeholder="Enter your reviews here..." required></textarea>
+            <br>
+            <!--<label for="reviewURL">or Input URL of Website Containing Reviews:</label>
+            <input type="url" id="reviewURL" name="reviewURL" placeholder="Enter the URL here...">
+            <br>-->
+            <button type="button" onclick="submitPrediction()">Predict</button>
+        </form>
+        <div id="resultSection" style="display:none;">
+            <p id="reviewText"></p>
+            <p id="predictionResult"></p>
+            <p id="recommendation"></p>
+        </div>
+    </div>
+
+   <!-- {% if response %}
+    <p>Review: {{ response.review }}</p>
+    <p>Sentiment: {{ response.sentiment }}</p>
+    <p>Recommendation: {{ response.recommendation }}</p>
+    {% else %}
+    <p>No response available.</p>
+    {% endif %}-->
+
+    <footer>
+        <p>&copy; 2024 Sentiment Analysis. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function submitPrediction() {
+            var reviewText = document.getElementById('reviewText').value; // Get the value from the textarea
+
+            if (!reviewText) {
+                alert('Please enter a review.');
+                return; // Prevent submission
+            }
+
+            fetch('/predictions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ reviewText: reviewText }) // Correctly send the review text
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    document.getElementById('reviewText').textContent = 'Review: ' + data.reviewText;
+                    document.getElementById('predictionResult').textContent = 'Sentiment: ' + data.sentiment;
+                    document.getElementById('recommendation').textContent = 'Recommendation: ' + data.recommendation;
+                    document.getElementById('resultSection').style.display = 'block';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>    
+    
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+                </div>
+                <h1>Sentiment</h1>
+            </div>
+            <nav>
+                    <a href="{{ url_for('index') }}">Index</a>
+                    <a href="{{ url_for('predict') }}">Prediction</a>
+                    <a href="{{ url_for('logout') }}">Log out</a>
+                    <a href="{{ url_for('contact') }}">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" id="Home">
+        <h2>Home Page</h2>
+    </div>
+    <div>
+        <p>Welcome to Sentiment Analysis where you get to know your Products. Our mission is to ensure that customers understand their products before purchasing them. Our vision is a future where customers can easily make decision of their products.</p>
+    </div>
+
+    <div class="container" id="About">
+        <h2>About Page</h2>
+        </div>
+        <div>
+        <p>Senti is dedicated to providing timely and accurate prediction of sentiment polarity of products and give recommendations about the products based on the percentage of the sentiment polarity given to a product using the customer reviews. Our goal is to offer detailed prediction and recommendations that enable efficient decision-making to customers and producers.</p>
+    </div>
+
+    <div class="container" id="Predictions">
+        <h2>Predictions Page</h2>
+    </div>
+    <div>
+        <p>Our services include:
+            <ul>
+                <li> 1. Real-time analysis, prediction and recommendations</li>
+                <li> 2. Product-related news and updates</li>
+                <li> 3. Resources and tips for Products</li>
+            </ul>
+        </p>
+        <section class="cta"
+        >
+            <button id="get-started">Get Started</button>
+
+<script>
+document.getElementById('get-started').onclick = function() {
+location.href = "('Predictions.html')";
+};
+</script>
+
+        </section>
+    </div>
+
+    <div class="container" id="contact">
+        <h2>Contact Page</h2>
+    </div>
+    <div>
+        <p>If you have any questions or need further information, please contact us:</p>
+        <p>Email: info@sentiment.com</p>
+        <p>Phone: +254 745 383 037</p>
+    </div>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Index</a></li>
+                <li><a href="{{ url_for('predict') }}">Prediction</a></li>
+                <li><a href="{{ url_for('logout') }}">Log out</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 Sentiment Analysis. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Example JavaScript for additional functionality, if needed
+document.addEventListener('DOMContentLoaded', function() {
+    // Add JavaScript functionality here if required
+});
+
+    </script>
+</body>
+</html>
